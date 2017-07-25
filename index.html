@@ -10,7 +10,8 @@
 </head>
 <style>
     #chain,
-    #battery {
+    #battery,
+    #hourglass {
         font-size: 70px;
     }
 </style>
@@ -20,6 +21,8 @@
     <br>
 
     <div class="fa" id="battery"></div>
+    <br>
+    <div class="fa" id="hourglass"></div>
 
 
     <script>
@@ -57,9 +60,22 @@
         }
         // Run Animation
         chargeBattery();
-
         // Run Animation Every 5s
         setInterval(chargeBattery, 5000);
+
+        function hourglass() {
+            let hourglass = document.getElementById('hourglass');
+            hourglass.innerHTML = "&#xf251";
+            setTimeout(function() {
+                hourglass.innerHTML = "&#xf252";
+            }, 1000);
+            setTimeout(function() {
+                hourglass.innerHTML = "&#xf253";
+            }, 2000);
+
+        }
+        hourglass();
+        setInterval(hourglass, 3000);
     </script>
 </body>
 
