@@ -9,13 +9,17 @@
     <title>Animated icons</title>
 </head>
 <style>
-    #chain {
+    #chain,
+    #battery {
         font-size: 70px;
     }
 </style>
 
 <body>
     <div class="fa" id="chain"></div>
+    <br>
+
+    <div class="fa" id="battery"></div>
 
 
     <script>
@@ -33,6 +37,29 @@
 
         // Animate Every 2 seconds
         setInterval(brakeChain, 2000);
+
+        // Battery Charge Animation
+        function chargeBattery() {
+            let battery = document.getElementById('battery');
+            battery.innerHTML = "&#xf244";
+            setTimeout(function() {
+                battery.innerHTML = "&#xf243";
+            }, 1000);
+            setTimeout(function() {
+                battery.innerHTML = "&#xf242";
+            }, 2000);
+            setTimeout(function() {
+                battery.innerHTML = "&#xf241";
+            }, 3000);
+            setTimeout(function() {
+                battery.innerHTML = "&#xf240";
+            }, 4000);
+        }
+        // Run Animation
+        chargeBattery();
+
+        // Run Animation Every 5s
+        setInterval(chargeBattery, 5000);
     </script>
 </body>
 
